@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gandaki Suppliers</title>
   <style>
-    /* Fonts and Reset */
+    /* Reset & Fonts */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -15,16 +15,24 @@
     }
     /* Animations */
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
+      from { opacity: 0; transform: translateY(-40px); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px);}
+      to { opacity: 1; transform: translateX(0);}
     }
 
     /* Header */
@@ -39,6 +47,8 @@
       width: 90px;
       margin-bottom: 15px;
       animation: bounce 2s infinite;
+      border-radius: 50%;
+      border: 3px solid white;
     }
     header h1 {
       font-size: 3em;
@@ -46,6 +56,7 @@
       margin: 10px 0 10px;
       letter-spacing: 2px;
       animation: fadeInUp 1.2s ease forwards;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     header p {
       font-size: 1.3em;
@@ -60,6 +71,7 @@
       padding: 14px 0;
       text-align: center;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+      animation: slideInLeft 1s ease forwards;
     }
     nav a {
       color: white;
@@ -79,9 +91,9 @@
       margin: 40px auto;
       padding: 30px;
       background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      animation: fadeInUp 1.6s ease forwards;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      animation: slideInRight 1s ease forwards;
     }
 
     /* Sections */
@@ -91,38 +103,64 @@
     .section h2 {
       color: #00695c;
       border-bottom: 3px solid #004d40;
-      padding-bottom: 8px;
+      padding-bottom: 7px;
+      margin-bottom: 15px;
       font-weight: 800;
-      font-size: 2em;
+      letter-spacing: 1.2px;
     }
     ul {
       list-style: square;
-      padding-left: 30px;
+      padding-left: 25px;
       font-size: 1.1em;
-      color: #444;
+      line-height: 1.6;
     }
 
     /* Buttons */
     .button-link {
       display: inline-block;
-      margin: 12px 10px 10px 0;
-      padding: 14px 24px;
+      margin: 12px 8px 12px 0;
+      padding: 12px 22px;
       background-color: #ff6f61;
       color: white;
       text-decoration: none;
-      font-weight: 700;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(255,111,97,0.5);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 700;
+      transition: background 0.3s;
+      box-shadow: 0 4px 8px rgba(255,111,97,0.4);
     }
     .button-link:hover {
       background-color: #d84315;
-      box-shadow: 0 6px 12px rgba(216,67,21,0.7);
+      box-shadow: 0 6px 12px rgba(216,67,21,0.6);
     }
 
-    /* Contact info */
-    .contact-info strong {
-      color: #00796b;
+    /* Customer Reviews Slider */
+    .reviews {
+      position: relative;
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: #f9f9f9;
+      padding: 30px 40px;
+      font-style: italic;
+      font-size: 1.15em;
+      color: #444;
+      min-height: 120px;
+    }
+    .review-slide {
+      display: none;
+      text-align: center;
+    }
+    .review-slide.active {
+      display: block;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .review-author {
+      margin-top: 15px;
+      font-weight: 700;
+      font-style: normal;
+      color: #00695c;
     }
 
     /* Footer */
@@ -132,9 +170,7 @@
       text-align: center;
       padding: 20px;
       font-size: 0.95em;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-top: 40px;
+      letter-spacing: 0.6px;
     }
 
     /* Responsive */
@@ -143,57 +179,104 @@
         font-size: 2em;
       }
       nav a {
-        font-size: 1em;
-        margin: 0 10px;
+        display: block;
+        margin: 10px 0;
+        font-size: 1.1em;
       }
       .container {
+        margin: 20px 15px;
         padding: 20px;
-        margin: 20px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Gandaki Suppliers Logo" />
-    <h1>Gandaki Suppliers</h1>
-    <p>🏠 Your trusted store for hardware & home decor materials</p>
+    <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" alt="Gandaki Suppliers Logo" />
+    <h1><strong>Gandaki Suppliers</strong> 🛠️🏡</h1>
+    <p>Your trusted store for hardware & home decor materials</p>
   </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#products">Products</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <div class="container">
+
     <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving furniture makers, home builders, and all kinds of customers with reliable quality and service.</p>
+      <h2>About Us 🌟</h2>
+      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving customers of all types — furniture makers, home builders, and more.</p>
+      <p><strong>🏠 Location:</strong> Rampur - 6, Palpa, Nepal</p>
+      <p><strong>🚚 Home Delivery:</strong> Available across Palpa and nearby areas</p>
+      <p><strong>📧 Email:</strong> sbgandakisuppliers@gmail.com</p>
     </section>
 
     <section id="products" class="section">
-      <h2>Our Products</h2>
+      <h2>Our Products 🛒</h2>
       <ul>
-        <li>🪵 Plywood & Sunmica</li>
-        <li>🏡 Kitchen & Home Decor Fittings</li>
-        <li>🧴 Fevicol, Formica & Glass</li>
-        <li>🔧 Hinges, Handles & Locks</li>
-        <li>🛠️ All types of furniture hardware</li>
+        <li>Plywood & Sunmica</li>
+        <li>Kitchen & Home Decor Fittings</li>
+        <li>Fevicol, Formica & Glass</li>
+        <li>Hinges, Handles & Locks</li>
+        <li>All types of furniture hardware</li>
       </ul>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact & Location</h2>
-      <p class="contact-info"><strong>📞 Phone:</strong> 9857060910</p>
-      <p class="contact-info"><strong>📍 Address:</strong> Rampur - 6, Palpa, Near Kalika Mandir</p>
-      <p class="contact-info"><strong>🚚 Home Delivery:</strong> Available in your area</p>
-      
-      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank" rel="noopener noreferrer">📍 View on Google Maps</a>
-      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank" rel="noopener noreferrer">👍 Follow us on Facebook</a>
-      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    <section id="reviews" class="section">
+      <h2>Customer Reviews 💬</h2>
+      <div class="reviews">
+        <div class="review-slide active">
+          "Excellent quality and great service! Highly recommended." 
+          <div class="review-author">- Anish Shrestha</div>
+        </div>
+        <div class="review-slide">
+          "Fast delivery and very friendly staff. I love their products." 
+          <div class="review-author">- Sita K.C.</div>
+        </div>
+        <div class="review-slide">
+          "Best hardware supplier in Palpa! Affordable and reliable." 
+          <div class="review-author">- Ram Gurung</div>
+        </div>
+      </div>
     </section>
+
+    <section id="contact" class="section">
+      <h2>Contact & Location 📞📍</h2>
+      <p><strong>Phone:</strong> <a href="tel:+9779857060910">9857060910</a></p>
+      <p><strong>Address:</strong> Rampur - 6, Palpa, Nepal</p>
+      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
+      <a class="button-link fb-button" href="https://www.facebook.com/gandaki.suppliers" target="_blank">👍 Follow us on Facebook</a>
+      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
+    </section>
+
   </div>
+
   <footer>
     &copy; 2025 Gandaki Suppliers. All rights reserved.
   </footer>
+
+  <script>
+    // Simple Review Slider
+    let currentReview = 0;
+    const reviews = document.querySelectorAll('.review-slide');
+
+    function showReview(index) {
+      reviews.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextReview() {
+      currentReview = (currentReview + 1) % reviews.length;
+      showReview(currentReview);
+    }
+
+    setInterval(nextReview, 4000); // Change review every 4 seconds
+  </script>
+
 </body>
 </html>
