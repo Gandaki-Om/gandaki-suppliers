@@ -10,26 +10,41 @@
     body { font-family: 'Segoe UI', sans-serif; margin: 0; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333; overflow-x: hidden; }/* Keyframes */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-@keyframes slideInLeft { 0% { transform: translateX(-50px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
-@keyframes slideInRight { 0% { transform: translateX(50px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes slideInLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes bounce { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-15px);} }
 @keyframes glow { 0%,100% {text-shadow: 0 0 5px rgba(255,111,97,0.5);} 50% {text-shadow: 0 0 15px rgba(255,111,97,1);} }
 
-/* Reveal utility */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-.header-reveal { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+/* Utility reveal class */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.reveal.active {
+  /* Ensure element becomes visible */
+  opacity: 1;
+  transform: translateY(0);
+  /* Play slide-in-up animation when revealed */
+  animation: slideInUp 0.6s ease-out forwards;
+}
 
 header {
   background: linear-gradient(135deg, #004d40, #009688);
-  color: white; padding: 40px 20px; text-align: center;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
 }
 header img { width: 90px; margin-bottom: 15px; animation: bounce 2s infinite; border-radius: 10px; }
 header h1 { font-size: 3em; font-weight: 900; margin: 10px 0; letter-spacing: 2px; animation: glow 3s infinite; }
 header p { font-size: 1.3em; font-weight: 600; }
 
 nav { background-color: #00695c; text-align: center; padding: 12px 0; }
-nav a { color: white; margin: 0 15px; font-weight: 700; text-decoration: none; font-size: 1.1em; display: inline-block; }
+nav a {
+  color: white; margin: 0 15px; font-weight: 700; text-decoration: none; font-size: 1.1em;
+  display: inline-block;
+}
 nav a:hover { color: #ff6f61; transform: scale(1.1); }
 
 .container { max-width: 1000px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
@@ -37,19 +52,28 @@ nav a:hover { color: #ff6f61; transform: scale(1.1); }
 .section h2 { font-size: 2em; border-bottom: 3px solid #004d40; padding-bottom: 10px; color: #00695c; }
 
 .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-.gallery img { width: 180px; height: 130px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.3s; }
+.gallery img {
+  width: 180px; height: 130px; object-fit: cover; border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.3s;
+}
 .gallery img:hover { transform: scale(1.2) rotate(5deg); }
 
-.button-link { display: inline-block; background: #ff6f61; color: white; padding: 12px 20px; margin: 10px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; }
+.button-link {
+  display: inline-block; background: #ff6f61; color: white; padding: 12px 20px;
+  margin: 10px 5px; text-decoration: none; border-radius: 8px; font-weight: bold;
+  transition: all 0.3s;
+}
 .button-link:hover { transform: scale(1.1); }
 
 footer { background-color: #004d40; color: white; text-align: center; padding: 20px; }
-#backToTop { position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color: white; padding: 10px 14px; border-radius: 50%; font-size: 22px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+#backToTop { position: fixed; bottom: 20px; right: 20px; background: #ff6f61; color: white;
+  padding: 10px 14px; border-radius: 50%; font-size: 22px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
 
   </style>
 </head>
 <body>
-  <header class="header-reveal">
+  <header class="reveal">
     <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" alt="Logo">
     <h1>Gandaki Suppliers 🛠️🏡</h1>
     <p>Your trusted store for hardware & home decor materials</p>
@@ -71,54 +95,54 @@ footer { background-color: #004d40; color: white; text-align: center; padding: 2
     <section id="products" class="section reveal">
       <h2>Our Products</h2>
       <ul>
-        <li>Plywood & Sunmica</li>
-        <li>Kitchen & Home Decor</li>
-        <li>Fevicol, Formica & Glass</li>
-        <li>Hinges, Handles & Locks</li>
-        <li>Furniture Hardware</li>
+        <li class="reveal">Plywood & Sunmica</li>
+        <li class="reveal">Kitchen & Home Decor</li>
+        <li class="reveal">Fevicol, Formica & Glass</li>
+        <li class="reveal">Hinges, Handles & Locks</li>
+        <li class="reveal">Furniture Hardware</li>
       </ul>
     </section>
     <section id="gallery" class="section reveal">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door1.jpg" alt="Door1">
-        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door2.jpg" alt="Door2">
-        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door-stopper1.jpg" alt="Stopper">
+        <img class="reveal" src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door1.jpg" alt="Door1">
+        <img class="reveal" src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door2.jpg" alt="Door2">
+        <img class="reveal" src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door-stopper1.jpg" alt="Stopper">
       </div>
     </section>
     <section id="reviews" class="section reveal">
       <h2>Customer Reviews</h2>
-      <blockquote>“Excellent quality and timely delivery!” – Sita P.</blockquote>
-      <blockquote>“Great prices and helpful staff.” – Ram K.</blockquote>
+      <blockquote class="reveal">“Excellent quality and timely delivery!” – Sita P.</blockquote>
+      <blockquote class="reveal">“Great prices and helpful staff.” – Ram K.</blockquote>
     </section>
     <section id="offers" class="section reveal">
       <h2>Special Offers</h2>
       <ul>
-        <li>10% off kitchen fittings</li>
-        <li>Buy 3 handles, get 1 free</li>
+        <li class="reveal">10% off kitchen fittings</li>
+        <li class="reveal">Buy 3 handles, get 1 free</li>
       </ul>
     </section>
     <section id="team" class="section reveal">
       <h2>Meet the Owner</h2>
-      <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda" style="width:150px;border-radius:10px;">
-      <p>Govinda Devkota – 20+ years experience, honesty & dedication in Palpa.</p>
+      <img class="reveal" src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda" style="width:150px;border-radius:10px;">
+      <p class="reveal">Govinda Devkota – 20+ years experience, honesty & dedication in Palpa.</p>
     </section>
     <section id="contact" class="section reveal">
       <h2>Contact & Location</h2>
       <ul>
-        <li>📞 9857060910</li>
-        <li>📧 sbgandakisuppliers@gmail.com</li>
-        <li>📍 Rampur 5, Palpa Bhejad</li>
+        <li class="reveal">📞 9857060910</li>
+        <li class="reveal">📧 sbgandakisuppliers@gmail.com</li>
+        <li class="reveal">📍 Rampur 5, Palpa Bhejad</li>
       </ul>
-      <a class="button-link" href="https://wa.me/9779857060910">WhatsApp</a>
-      <a class="button-link" href="https://rb.gy/1zawm2">Maps</a>
+      <a class="button-link reveal" href="https://wa.me/9779857060910">WhatsApp</a>
+      <a class="button-link reveal" href="https://rb.gy/1zawm2">Maps</a>
     </section>
   </div>
   <a id="backToTop" href="#top">↑</a>
   <footer class="reveal">&copy; 2025 Gandaki Suppliers</footer>
   <script>
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
