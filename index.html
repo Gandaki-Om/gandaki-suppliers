@@ -1,62 +1,79 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gandaki Suppliers</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
+    /* Fonts and Reset */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
       color: #333;
-      animation: fadeInBody 1.5s ease-in;
+      overflow-x: hidden;
     }
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Header */
     header {
       background: linear-gradient(135deg, #004d40, #009688);
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
-      animation: slideDown 1s ease-out;
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      animation: fadeInDown 1s ease forwards;
     }
     header img {
-      width: 80px;
-      margin-bottom: 10px;
-      animation: fadeIn 2s;
+      width: 90px;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
     }
     header h1 {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin: 10px 0 5px;
+      font-size: 3em;
+      font-weight: 900;
+      margin: 10px 0 10px;
+      letter-spacing: 2px;
+      animation: fadeInUp 1.2s ease forwards;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin: 0;
+      font-weight: 600;
+      animation: fadeInUp 1.4s ease forwards;
     }
+
+    /* Navigation */
     nav {
       background-color: #00695c;
-      padding: 12px 0;
+      padding: 14px 0;
       text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 18px;
-      font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s;
+      margin: 0 22px;
+      font-weight: 700;
+      font-size: 1.15em;
+      transition: color 0.3s ease;
     }
     nav a:hover {
-      color: #ffecd2;
+      color: #ff6f61;
     }
+
+    /* Container */
     .container {
       max-width: 1000px;
       margin: 40px auto;
@@ -64,120 +81,115 @@
       background-color: rgba(255, 255, 255, 0.95);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      animation: fadeInUp 1s ease-in-out;
+      animation: fadeInUp 1.6s ease forwards;
     }
-    @keyframes fadeInUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+
+    /* Sections */
     .section {
       margin-bottom: 40px;
     }
     .section h2 {
       color: #00695c;
-      border-bottom: 2px solid #004d40;
-      padding-bottom: 5px;
+      border-bottom: 3px solid #004d40;
+      padding-bottom: 8px;
+      font-weight: 800;
+      font-size: 2em;
     }
     ul {
       list-style: square;
-      padding-left: 25px;
-      font-size: 1.05em;
+      padding-left: 30px;
+      font-size: 1.1em;
+      color: #444;
     }
+
+    /* Buttons */
     .button-link {
       display: inline-block;
-      margin: 12px 8px;
-      padding: 12px 20px;
+      margin: 12px 10px 10px 0;
+      padding: 14px 24px;
       background-color: #ff6f61;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s, transform 0.2s;
+      font-weight: 700;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255,111,97,0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .button-link:hover {
       background-color: #d84315;
-      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(216,67,21,0.7);
     }
-    .fb-page-container {
-      margin-top: 25px;
+
+    /* Contact info */
+    .contact-info strong {
+      color: #00796b;
     }
-    .slider {
-      max-width: 100%;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    .slider img {
-      width: 100%;
-      display: block;
-      animation: zoomIn 2s;
-    }
-    @keyframes zoomIn {
-      from { transform: scale(1.1); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
+
+    /* Footer */
     footer {
       background-color: #004d40;
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 0.95em;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav a {
+        font-size: 1em;
+        margin: 0 10px;
+      }
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Gandaki Suppliers Logo" />
-    <h1><strong>🏡 Gandaki Suppliers</strong></h1>
-    <p>Your trusted store for 🛠️ hardware & 🪞 home decor materials</p>
+    <h1>Gandaki Suppliers</h1>
+    <p>🏠 Your trusted store for hardware & home decor materials</p>
   </header>
   <nav>
-    <a href="#about">📖 About</a>
-    <a href="#products">🧰 Products</a>
-    <a href="#contact">📞 Contact</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
   </nav>
-
-  <div class="slider">
-    <img src="door1.jpg" alt="Decor 1">
-  </div>
-
   <div class="container">
-    <section id="about" class="section animate__animated animate__fadeInLeft">
-      <h2>📖 About Us</h2>
-      <p>We supply all types of 🛠️ hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving customers of all types—furniture makers, home builders, and more.</p>
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving furniture makers, home builders, and all kinds of customers with reliable quality and service.</p>
     </section>
-    <section id="products" class="section animate__animated animate__fadeInRight">
-      <h2>🧰 Our Products</h2>
+
+    <section id="products" class="section">
+      <h2>Our Products</h2>
       <ul>
         <li>🪵 Plywood & Sunmica</li>
-        <li>🏠 Kitchen & Home Decor Fittings</li>
+        <li>🏡 Kitchen & Home Decor Fittings</li>
         <li>🧴 Fevicol, Formica & Glass</li>
-        <li>🔩 Hinges, Handles & Locks</li>
-        <li>🧰 All types of furniture hardware</li>
+        <li>🔧 Hinges, Handles & Locks</li>
+        <li>🛠️ All types of furniture hardware</li>
       </ul>
     </section>
-    <section id="contact" class="section animate__animated animate__fadeInUp">
-      <h2>📞 Contact & Location</h2>
-      <p><strong>📱 Phone:</strong> 9857060910</p>
-      <p><strong>📍 Address:</strong> Nadipur, Pokhara - 3, Near Kalika Mandir</p>
-      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
-      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">👍 Follow us on Facebook</a>
-      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
-      <div class="fb-page-container">
-        <div class="fb-page" 
-             data-href="https://www.facebook.com/share/1ALVbjYkdD/"
-             data-tabs="timeline"
-             data-width=""
-             data-height="300"
-             data-small-header="false"
-             data-adapt-container-width="true"
-             data-hide-cover="false"
-             data-show-facepile="true">
-          <blockquote cite="https://www.facebook.com/share/1ALVbjYkdD/" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/share/1ALVbjYkdD/">Gandaki Suppliers</a>
-          </blockquote>
-        </div>
-      </div>
+
+    <section id="contact" class="section">
+      <h2>Contact & Location</h2>
+      <p class="contact-info"><strong>📞 Phone:</strong> 9857060910</p>
+      <p class="contact-info"><strong>📍 Address:</strong> Rampur - 6, Palpa, Near Kalika Mandir</p>
+      <p class="contact-info"><strong>🚚 Home Delivery:</strong> Available in your area</p>
+      
+      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank" rel="noopener noreferrer">📍 View on Google Maps</a>
+      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank" rel="noopener noreferrer">👍 Follow us on Facebook</a>
+      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
     </section>
   </div>
   <footer>
@@ -185,6 +197,3 @@
   </footer>
 </body>
 </html>
-
-
-
