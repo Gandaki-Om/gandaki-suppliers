@@ -11,14 +11,15 @@
       color: #333;
       overflow-x: hidden;
     }
-    @keyframes fadeInDown {
-      0% {opacity: 0; transform: translateY(-20px);} 100% {opacity: 1; transform: translateY(0);}    
+    @keyframes fadeInDown {0% {opacity: 0; transform: translateY(-20px);} 100% {opacity: 1; transform: translateY(0);}}
+    @keyframes fadeInUp   {0% {opacity: 0; transform: translateY(20px);}  100% {opacity: 1; transform: translateY(0);}}
+    @keyframes bounce     {0%,100% {transform: translateY(0);} 50% {transform: translateY(-15px);}}
+    @keyframes fadeInSection {
+      from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);}
     }
-    @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(20px);} 100% {opacity: 1; transform: translateY(0);}    
-    }
-    @keyframes bounce {
-      0%, 100% {transform: translateY(0);} 50% {transform: translateY(-15px);}
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,111,97, 0.7); }
+      50% { box-shadow: 0 0 12px 6px rgba(255,111,97, 0); }
     }
     header {
       background: linear-gradient(135deg, #004d40, #009688);
@@ -65,11 +66,15 @@
       max-width: 1000px;
       margin: 40px auto 80px;
       padding: 30px;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255,255,255,0.95);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       border-radius: 8px;
+      animation: fadeInSection 1s ease both;
     }
-    .section { margin-bottom: 50px; }
+    .section {
+      margin-bottom: 50px;
+      animation: fadeInSection 0.8s ease forwards;
+    }
     .section h2 {
       color: #00695c;
       border-bottom: 3px solid #004d40;
@@ -92,9 +97,13 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: 700;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
+      animation: pulse 2s infinite;
     }
-    .button-link:hover { background-color: #d84315; }
+    .button-link:hover {
+      background-color: #d84315;
+      transform: scale(1.05);
+    }
     footer {
       background-color: #004d40;
       color: white;
@@ -173,11 +182,11 @@
     <section id="gallery" class="section">
       <h2>Gallery</h2>
       <div class="gallery">
-        <img src="door1.jpg" alt="Door 1" />
-        <img src="door2.jpg" alt="Door 2" />
-        <img src="door-stopper1.jpg" alt="Door Stopper 1" />
-        <img src="door-handle1.jpg" alt="Door Handle 1" />
-        <img src="door3.jpg" alt="Door 3" />
+        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door1.jpg" alt="Door 1" />
+        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door2.jpg" alt="Door 2" />
+        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door-stopper1.jpg" alt="Door Stopper 1" />
+        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door-handle1.jpg" alt="Door Handle 1" />
+        <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/gallery/door3.jpg" alt="Door 3" />
       </div>
     </section>
     <section id="reviews" class="section reviews">
@@ -195,8 +204,8 @@
     </section>
     <section id="team" class="section team">
       <h2>👨‍🔧 Meet the Owner</h2>
-      <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda Devkota" style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px;" />
-      <p>Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in Palpa for his honesty, dedication, and excellent customer service.</p>
+      <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda Devkota" style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px; animation: fadeInSection 1s ease forwards;" />
+      <p style="animation: fadeInSection 1s ease forwards;">Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in Palpa for his honesty, dedication, and excellent customer service.</p>
     </section>
     <section id="contact" class="section">
       <h2>Contact & Location</h2>
@@ -207,9 +216,9 @@
         <li>⏰ Business Hours: <strong>7 AM - 8 PM (Everyday)</strong></li>
         <li>🚚 Free Delivery Around Shop | Delivery All Over Palpa</li>
       </ul>
-      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
-      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">👍 Follow us on Facebook</a>
-      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
+      <a class="button-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
+      <a class="button-link" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">👍 Follow us on Facebook</a>
+      <a class="button-link" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
     </section>
   </div>
   <footer>
