@@ -3,22 +3,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gandaki Suppliers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
       color: #333;
+      animation: fadeInBody 1.5s ease-in;
+    }
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     header {
       background: linear-gradient(135deg, #004d40, #009688);
       color: white;
       padding: 30px 20px;
       text-align: center;
+      animation: slideDown 1s ease-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     header img {
       width: 80px;
       margin-bottom: 10px;
+      animation: fadeIn 2s;
     }
     header h1 {
       font-size: 2.5em;
@@ -40,14 +52,23 @@
       margin: 0 18px;
       font-weight: bold;
       font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffecd2;
     }
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 30px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.95);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     .section {
       margin-bottom: 40px;
@@ -66,17 +87,34 @@
       display: inline-block;
       margin: 12px 8px;
       padding: 12px 20px;
-      background-color: #00796b;
+      background-color: #ff6f61;
       color: white;
       text-decoration: none;
       border-radius: 6px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
     .button-link:hover {
-      background-color: #004d40;
+      background-color: #d84315;
+      transform: scale(1.05);
     }
     .fb-page-container {
       margin-top: 25px;
+    }
+    .slider {
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .slider img {
+      width: 100%;
+      display: block;
+      animation: zoomIn 2s;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(1.1); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
     footer {
       background-color: #004d40;
@@ -90,54 +128,63 @@
 <body>
   <header>
     <img src="logo.png" alt="Gandaki Suppliers Logo" />
-    <h1><strong>Gandaki Suppliers</strong></h1>
-    <p>Your trusted store for hardware & home decor materials</p>
-  </header>  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>  <div class="container">
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving customers of all types—furniture makers, home builders, and more.</p>
-    </section><section id="products" class="section">
-  <h2>Our Products</h2>
-  <ul>
-    <li>Plywood & Sunmica</li>
-    <li>Kitchen & Home Decor Fittings</li>
-    <li>Fevicol, Formica & Glass</li>
-    <li>Hinges, Handles & Locks</li>
-    <li>All types of furniture hardware</li>
-  </ul>
-</section>
+    <h1><strong>🏡 Gandaki Suppliers</strong></h1>
+    <p>Your trusted store for 🛠️ hardware & 🪞 home decor materials</p>
+  </header>
+  <nav>
+    <a href="#about">📖 About</a>
+    <a href="#products">🧰 Products</a>
+    <a href="#contact">📞 Contact</a>
+  </nav>
 
-<section id="contact" class="section">
-  <h2>Contact & Location</h2>
-  <p><strong>Phone:</strong> 9857060910</p>
-  <p><strong>Address:</strong> Nadipur, Pokhara - 3, Near Kalika Mandir</p>
-  <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
-  <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">👍 Follow us on Facebook</a>
-  <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
-
-  <div class="fb-page-container">
-    <div class="fb-page" 
-         data-href="https://www.facebook.com/share/1ALVbjYkdD/"
-         data-tabs="timeline"
-         data-width=""
-         data-height="300"
-         data-small-header="false"
-         data-adapt-container-width="true"
-         data-hide-cover="false"
-         data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/share/1ALVbjYkdD/" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/share/1ALVbjYkdD/">Gandaki Suppliers</a>
-      </blockquote>
-    </div>
+  <div class="slider">
+    <img src="door1.jpg" alt="Decor 1">
   </div>
-</section>
 
-  </div>  <footer>
+  <div class="container">
+    <section id="about" class="section animate__animated animate__fadeInLeft">
+      <h2>📖 About Us</h2>
+      <p>We supply all types of 🛠️ hardware, plywood, sunmica, Fevicol, glass, kitchen and home decor fittings. Serving customers of all types—furniture makers, home builders, and more.</p>
+    </section>
+    <section id="products" class="section animate__animated animate__fadeInRight">
+      <h2>🧰 Our Products</h2>
+      <ul>
+        <li>🪵 Plywood & Sunmica</li>
+        <li>🏠 Kitchen & Home Decor Fittings</li>
+        <li>🧴 Fevicol, Formica & Glass</li>
+        <li>🔩 Hinges, Handles & Locks</li>
+        <li>🧰 All types of furniture hardware</li>
+      </ul>
+    </section>
+    <section id="contact" class="section animate__animated animate__fadeInUp">
+      <h2>📞 Contact & Location</h2>
+      <p><strong>📱 Phone:</strong> 9857060910</p>
+      <p><strong>📍 Address:</strong> Nadipur, Pokhara - 3, Near Kalika Mandir</p>
+      <a class="button-link map-link" href="https://rb.gy/1zawm2" target="_blank">📍 View on Google Maps</a>
+      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">👍 Follow us on Facebook</a>
+      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">💬 Chat on WhatsApp</a>
+      <div class="fb-page-container">
+        <div class="fb-page" 
+             data-href="https://www.facebook.com/share/1ALVbjYkdD/"
+             data-tabs="timeline"
+             data-width=""
+             data-height="300"
+             data-small-header="false"
+             data-adapt-container-width="true"
+             data-hide-cover="false"
+             data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/share/1ALVbjYkdD/" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/share/1ALVbjYkdD/">Gandaki Suppliers</a>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
     &copy; 2025 Gandaki Suppliers. All rights reserved.
   </footer>
 </body>
 </html>
+
+
+
