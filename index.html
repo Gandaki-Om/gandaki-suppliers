@@ -132,12 +132,14 @@
       position: absolute;
       width: 100%;
       opacity: 0;
+      visibility: hidden;
       transition: opacity 0.5s ease;
       padding-left: 40px;
       font-style: italic;
     }
     .review.active {
       opacity: 1;
+      visibility: visible;
       position: relative;
     }
     .review::before {
