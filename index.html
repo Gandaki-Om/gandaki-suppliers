@@ -1,10 +1,23 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gandaki Suppliers 💪🏡</title>  <!-- ✅ Favicon -->  <link rel="icon" href="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/favicon-gandaki.png" type="image/png">  <!-- ✅ SEO Meta Tags -->  <meta name="description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more. Owned by Govinda Devkota.">
-  <meta name="keywords" content="Gandaki Suppliers, Hardware Palpa, Plywood, Sunmica, Kitchen Fittings, Nepal Hardware Shop, Govinda Devkota">
-  <meta name="author" content="Govinda Devkota">  <!-- Font Awesome Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  <title>Gandaki Suppliers 💪🏡</title>
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/favicon-gandaki.png" type="image/png" />
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more. Owned by Govinda Devkota." />
+  <meta name="keywords" content="Gandaki Suppliers, Hardware Palpa, Plywood, Sunmica, Kitchen Fittings, Nepal Hardware Shop, Govinda Devkota" />
+  <meta name="author" content="Govinda Devkota" />
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -23,10 +36,6 @@
     @keyframes bounce {
       0%, 100% {transform: translateY(0);} 
       50% {transform: translateY(-15px);}
-    }
-    @keyframes slideFadeInLeft {
-      0% {opacity: 0; transform: translateX(-40px);} 
-      100% {opacity: 1; transform: translateX(0);}
     }
     header {
       background: linear-gradient(135deg, #004d40, #009688);
@@ -110,22 +119,27 @@
       padding: 20px;
       font-size: 0.95em;
     }
-    .reviews, .offers, .team, .stats {
+    .reviews {
+      position: relative;
+      overflow: hidden;
+      height: 100px; /* adjust as needed */
       background: #e0f2f1;
       padding: 20px;
       border-radius: 8px;
+      margin-bottom: 50px;
     }
     .review {
-      margin-bottom: 20px;
-      font-style: italic;
-      position: relative;
-      padding-left: 40px;
+      position: absolute;
+      width: 100%;
       opacity: 0;
-      animation: slideFadeInLeft 0.8s ease forwards;
+      transition: opacity 0.5s ease;
+      padding-left: 40px;
+      font-style: italic;
     }
-    .review:nth-child(1) { animation-delay: 0.2s; }
-    .review:nth-child(2) { animation-delay: 0.5s; }
-    .review:nth-child(3) { animation-delay: 0.8s; }
+    .review.active {
+      opacity: 1;
+      position: relative;
+    }
     .review::before {
       content: "\1F4AC";
       position: absolute;
@@ -152,7 +166,8 @@
       transform: scale(1.1);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
-  </style></head>
+  </style>
+</head>
 <body>
   <header>
     <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" alt="Gandaki Suppliers Logo" />
@@ -207,8 +222,16 @@
     </section>
     <section id="team" class="section team">
       <h2>👨‍🔧 Meet the Owner</h2>
-      <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda Devkota" style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px;" />
-      <p>Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in Palpa for his honesty, dedication, and excellent customer service.</p>
+      <img
+        src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg"
+        alt="Govinda Devkota"
+        style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px;"
+      />
+      <p>
+        Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over
+        <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in
+        Palpa for his honesty, dedication, and excellent customer service.
+      </p>
     </section>
     <section id="contact" class="section">
       <h2>Contact & Location</h2>
@@ -219,7 +242,11 @@
         <li>⏰ Business Hours: <strong>7 AM - 8 PM (Everyday)</strong></li>
         <li>🚚 Free Delivery Around Shop | Delivery All Over Palpa</li>
       </ul>
-      <a class="button-link map-link" href="https://www.google.com/maps?q=Gandaki+Suppliers,+Rampur+5,+Palpa+Bhejad,+Nepal" target="_blank">
+      <a
+        class="button-link map-link"
+        href="https://www.google.com/maps?q=Gandaki+Suppliers,+Rampur+5,+Palpa+Bhejad,+Nepal"
+        target="_blank"
+      >
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
       </a>
       <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">
@@ -234,5 +261,27 @@
     &copy; 2025 Gandaki Suppliers. All rights reserved. |
     <a href="privacy-policy.html" style="color: #fff; text-decoration: underline;">Privacy Policy</a>
   </footer>
+
+  <script>
+    const reviews = document.querySelectorAll('.review');
+    let current = 0;
+
+    function showReview(index) {
+      reviews.forEach((rev, i) => {
+        rev.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextReview() {
+      current = (current + 1) % reviews.length;
+      showReview(current);
+    }
+
+    // Initially show the first review
+    showReview(current);
+
+    // Change review every 3 seconds
+    setInterval(nextReview, 3000);
+  </script>
 </body>
   </html>
