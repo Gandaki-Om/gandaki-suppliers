@@ -4,71 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gandaki Suppliers | Rampur, Palpa</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
+      background: #f8f9fa;
       color: #333;
     }
 
     header {
-      background: #2c3e50;
-      padding: 20px;
+      background-color: #004d40;
+      color: white;
+      padding: 15px 20px;
       text-align: center;
-      color: #fff;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    header p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 10px;
     }
 
     nav a {
-      margin: 0 10px;
-      color: #00aced;
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    .section {
-      padding: 20px;
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .section h2 {
-      color: #2c3e50;
-      font-size: 24px;
-      margin-bottom: 15px;
+    h1, h2 {
+      color: #004d40;
     }
 
-    .products, .contact {
-      background: #fff;
-      padding: 20px;
+    .products img {
+      width: 100%;
+      max-width: 200px;
+      margin: 10px;
       border-radius: 8px;
     }
 
-    .products ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .products li::before {
-      content: "🛠️ ";
-    }
-
-    .contact p {
-      margin: 10px 0;
+    .product-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .reviews {
@@ -77,7 +56,7 @@
       background: #e0f2f1;
       padding: 20px;
       border-radius: 8px;
-      margin: 20px 0;
+      margin-bottom: 50px;
     }
 
     .review {
@@ -106,36 +85,34 @@
       color: #00796b;
     }
 
+    .contact a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #00796b;
+    }
+
     footer {
-      background: #2c3e50;
-      color: #fff;
+      background-color: #004d40;
+      color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
+      padding: 20px 10px;
     }
 
-    .social {
-      margin-top: 10px;
-    }
-
-    .social a {
-      color: #fff;
-      margin: 0 8px;
-      font-size: 20px;
+    footer a {
+      color: #b2dfdb;
+      margin: 0 10px;
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
-      .section h2 {
-        font-size: 20px;
+      nav a {
+        display: block;
+        margin: 10px 0;
       }
-
-      .review {
-        font-size: 14px;
-        padding-left: 30px;
-      }
-
-      .social a {
-        font-size: 18px;
+      .product-gallery {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -144,47 +121,56 @@
 
   <header>
     <h1>Gandaki Suppliers</h1>
-    <p>All kinds of hardware and home decor materials</p>
+    <p>Rampur, Palpa | Quality Hardware & Fittings</p>
     <nav>
-      <a href="tel:9857060910">Call</a> |
-      <a href="https://www.instagram.com/gandakisupplier_rampur" target="_blank">Instagram</a> |
-      <a href="https://facebook.com/gandakisuppliers" target="_blank">Facebook</a> |
-      <a href="https://wa.me/9779857060910" target="_blank">WhatsApp</a> |
-      <a href="https://maps.app.goo.gl/zXEq5fgyNjcMWbmy7" target="_blank">Location</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="section products">
-    <h2>Our Products</h2>
-    <ul>
-      <li>Plywood, Sunmica, Formica</li>
-      <li>Fevicol and Glass</li>
-      <li>All types of hardware items</li>
-      <li>Kitchen and home decorative fittings</li>
-    </ul>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Gandaki Suppliers – your one-stop shop in Rampur, Palpa for plywood, sunmica, Fevicol, glass, kitchen décor items, and all types of hardware materials. We proudly serve furniture makers, homeowners, and builders with both quality and affordable options.</p>
   </section>
 
-  <section class="section reviews">
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-gallery">
+      <img src="plywood.jpg" alt="Plywood" />
+      <img src="sunmica.jpg" alt="Sunmica" />
+      <img src="fevicol.jpg" alt="Fevicol" />
+      <img src="hardware.jpg" alt="Hardware" />
+      <img src="glass.jpg" alt="Glass Items" />
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
     <h2>Customer Reviews</h2>
     <div class="review active">"Excellent quality and timely delivery! Highly recommend Gandaki Suppliers." – Sita P. ⭐⭐⭐⭐⭐</div>
     <div class="review">"Great service and amazing products. Will order again!" – Ram K. ⭐⭐⭐⭐</div>
     <div class="review">"Affordable prices and reliable delivery. Very satisfied!" – Laxmi T. ⭐⭐⭐⭐⭐</div>
   </section>
 
-  <section class="section contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> <a href="tel:9857060910">9857060910</a>, <a href="tel:9842363913">9842363913</a></p>
-    <p><strong>Location:</strong> Rampur, Palpa, Nepal</p>
-    <p><strong>Website:</strong> <a href="http://bit.ly/45Va465" target="_blank">bit.ly/45Va465</a></p>
+    <p>📞 <strong>9857060910</strong> | 📞 <strong>9842363913</strong></p>
+    <a href="https://bit.ly/45Va465" target="_blank">🌐 Official Website</a>
+    <a href="https://www.facebook.com/gandakisupplier_rampur" target="_blank">📘 Facebook</a>
+    <a href="https://www.instagram.com/gandakisupplier_rampur" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/9779857060910" target="_blank">💬 WhatsApp</a>
+    <a href="https://maps.app.goo.gl/vxC63J4mPyAySmVr5" target="_blank">📍 Location (Google Maps)</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 Gandaki Suppliers | Designed with ❤️ in Rampur</p>
-    <div class="social">
-      <a href="https://instagram.com/gandakisupplier_rampur" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/gandakisuppliers" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/9779857060910" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
+    <p>&copy; 2025 Gandaki Suppliers | Designed by Govinda Devkota</p>
+    <p>
+      <a href="#about">About</a> |
+      <a href="#products">Products</a> |
+      <a href="#reviews">Reviews</a> |
+      <a href="#contact">Contact</a>
+    </p>
   </footer>
 
   <script>
@@ -203,6 +189,5 @@
     showReview(current);
     setInterval(nextReview, 3000);
   </script>
-
 </body>
 </html>
