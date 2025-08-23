@@ -1,325 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gandaki Suppliers 💪🏡</title>
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Gandaki Suppliers 💪🏡</title>  
+  <!-- ✅ Favicon -->  
+  <link rel="icon" href="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/favicon-gandaki.png" type="image/png" />  
+  <!-- ✅ SEO Meta Tags -->  
+  <meta name="description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more. Owned by Govinda Devkota." />  
+  <meta name="keywords" content="Gandaki Suppliers, Hardware Palpa, Plywood, Sunmica, Kitchen Fittings, Nepal Hardware Shop, Govinda Devkota" />  
+  <meta name="author" content="Govinda Devkota" />  
+  <!-- Font Awesome Icons -->  
+  <link  
+    rel="stylesheet"  
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"  
+    crossorigin="anonymous"  
+    referrerpolicy="no-referrer"  
+  />  
+  <style>  
+    body {  
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+      margin: 0;  
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);  
+      color: #333;  
+      overflow-x: hidden;  
+    }  
+    @keyframes fadeInDown {  
+      0% {opacity: 0; transform: translateY(-20px);}   
+      100% {opacity: 1; transform: translateY(0);}      
+    }  
+    @keyframes fadeInUp {  
+      0% {opacity: 0; transform: translateY(20px);}   
+      100% {opacity: 1; transform: translateY(0);}      
+    }  
+    @keyframes bounce {  
+      0%, 100% {transform: translateY(0);}   
+      50% {transform: translateY(-15px);}  
+    }  
+    header {  
+      background: linear-gradient(135deg, #004d40, #009688);  
+      color: white;  
+      padding: 40px 20px;  
+      text-align: center;  
+      animation: fadeInDown 1s ease forwards;  
+    }  
+    header img {  
+      width: 90px;  
+      margin-bottom: 15px;  
+      animation: bounce 2s infinite;  
+      border-radius: 10px;  
+    }  
+    header h1 {  
+      font-size: 3em;  
+      font-weight: 900;  
+      margin: 10px 0;  
+      letter-spacing: 2px;  
+      animation: fadeInUp 1.2s ease forwards;  
+    }  
+    header p {  
+      font-size: 1.3em;  
+      margin: 0;  
+      font-weight: 600;  
+      animation: fadeInUp 1.4s ease forwards;  
+    }  
+    nav {  
+      background-color: #00695c;  
+      padding: 14px 0;  
+      text-align: center;  
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16);  
+    }  
+    nav a {  
+      color: white;  
+      text-decoration: none;  
+      margin: 0 22px;  
+      font-weight: 700;  
+      font-size: 1.15em;  
+      transition: color 0.3s ease;  
+    }  
+    nav a:hover { color: #ff6f61; }  
+    .container {  
+      max-width: 1000px;  
+      margin: 40px auto 80px;  
+      padding: 30px;  
+      background-color: rgba(255, 255, 255, 0.95);  
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
+      border-radius: 8px;  
+    }  
+    .section { margin-bottom: 50px; }  
+    .section h2 {  
+      color: #00695c;  
+      border-bottom: 3px solid #004d40;  
+      padding-bottom: 10px;  
+      font-size: 2em;  
+      margin-bottom: 20px;  
+    }  
+    ul, .info-list {  
+      list-style: square;  
+      padding-left: 25px;  
+      font-size: 1.1em;  
+      color: #333;  
+    }  
+    .button-link {  
+      display: inline-block;  
+      margin: 12px 8px;  
+      padding: 14px 24px;  
+      background-color: #ff6f61;  
+      color: white;  
+      text-decoration: none;  
+      border-radius: 8px;  
+      font-weight: 700;  
+      transition: background 0.3s;  
+    }  
+    .button-link:hover { background-color: #d84315; }  
+    footer {  
+      background-color: #004d40;  
+      color: white;  
+      text-align: center;  
+      padding: 20px;  
+      font-size: 0.95em;  
+    }  
+    .reviews {  
+      position: relative;  
+      overflow: hidden;  
+      height: 100px; /* adjust as needed */  
+      background: #e0f2f1;  
+      padding: 20px;  
+      border-radius: 8px;  
+      margin-bottom: 50px;  
+    }  
+    .review {  
+      position: absolute;  
+      width: 100%;  
+      opacity: 0;  
+      transition: opacity 0.5s ease;  
+      padding-left: 40px;  
+      font-style: italic;  
+    }  
+    .review.active {  
+      opacity: 1;  
+      position: relative;  
+    }  
+    .review::before {  
+      content: "\1F4AC";  
+      position: absolute;  
+      left: 10px;  
+      top: 0;  
+      font-size: 24px;  
+    }  
+    .gallery {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 15px;  
+      justify-content: center;  
+    }  
+    .gallery img {  
+      width: 180px;  
+      height: 130px;  
+      object-fit: cover;  
+      border-radius: 10px;  
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);  
+      transition: transform 0.3s ease;  
+      cursor: pointer;  
+    }  
+    .gallery img:hover {  
+      transform: scale(1.1);  
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" alt="Gandaki Suppliers Logo" />  
+    <h1>Gandaki Suppliers 💪🏡</h1>  
+    <p>Your trusted store for hardware & home decor materials</p>  
+  </header>  
+  <nav>  
+    <a href="#about">About</a>  
+    <a href="#products">Products</a>  
+    <a href="#gallery">Gallery</a>  
+    <a href="#reviews">Reviews</a>  
+    <a href="#offers">Offers</a>  
+    <a href="#contact">Contact</a>  
+  </nav>  
+  <div class="container">  
+    <section id="about" class="section">  
+      <h2>About Us</h2>  
+      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen & home decor fittings. Serving furniture makers, home builders & more with reliable, quality products. 🚚 Home delivery available!</p>  
+    </section>  
+    <section id="products" class="section">  
+      <h2>Our Products</h2>  
+      <ul>  
+        <li>🪕 Plywood & Sunmica</li>  
+        <li>🍽️ Kitchen & Home Decor Fittings</li>  
+        <li>🧴 Fevicol, Formica & Glass</li>  
+        <li>🔨 Hinges, Handles & Locks</li>  
+        <li>🏋️ All types of furniture hardware</li>  
+      </ul>  
+    </section>  
+    <section id="gallery" class="section">  
+      <h2>Gallery</h2>  
+      <div class="gallery">  
+        <img src="door1.jpg" alt="Door 1" />  
+        <img src="door2.jpg" alt="Door 2" />  
+        <img src="door-stopper1.jpg" alt="Door Stopper 1" />  
+        <img src="door-handle1.jpg" alt="Door Handle 1" />  
+        <img src="door3.jpg" alt="Door 3" />  
+      </div>  
+    </section>  
+    <section id="reviews" class="section reviews">  
+      <h2>Customer Reviews</h2>  
+      <div class="review">"Excellent quality and timely delivery! Highly recommend Gandaki Suppliers." – Sita P. ⭐⭐⭐⭐⭐</div>  
+      <div class="review">"Great prices and helpful staff. The best hardware shop in town." – Ram K. ⭐⭐⭐⭐⭐</div>  
+      <div class="review">"Wide variety of products and top-notch service. Very satisfied!" – Anil B. ⭐⭐⭐⭐⭐</div>  
+    </section>  
+    <section id="offers" class="section offers">  
+      <h2>🎉 Special Offers</h2>  
+      <ul>  
+        <li>💸 10% off on kitchen fittings (this week only!)</li>  
+        <li>🛍️ Buy 3 handles, get 1 free!</li>  
+      </ul>  
+    </section>  
+    <section id="team" class="section team">  
+      <h2>👨‍🔧 Meet the Owner</h2>  
+      <img  
+        src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg"  
+        alt="Govinda Devkota"  
+        style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px;"  
+      />  
+      <p>  
+        Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over  
+        <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in  
+        Palpa for his honesty, dedication, and excellent customer service.  
+      </p>  
+    </section>  
+    <section id="contact" class="section">  
+      <h2>Contact & Location</h2>  
+      <ul class="info-list">  
+        <li>📞 Phone: <strong>9857060910</strong></li>  
+        <li>📧 Email: <strong>sbgandakisuppliers@gmail.com</strong></li>  
+        <li>📍 Address: <strong>Rampur 5, Palpa Bhejad, Nepal</strong></li>  
+        <li>⏰ Business Hours: <strong>7 AM - 8 PM (Everyday)</strong></li>  
+        <li>🚚 Free Delivery Around Shop | Delivery All Over Palpa</li>  
+      </ul>  
+      <a  
+        class="button-link map-link"  
+        href="https://maps.app.goo.gl/vQFNXiFo361URjE67"  
+        target="_blank"  
+      >  
+        <i class="fas fa-map-marker-alt"></i> View on Google Maps  
+      </a>  
+      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">  
+        <i class="fab fa-facebook"></i> Follow us on Facebook  
+      </a>  
+      <a class="button-link insta-button" href="https://www.instagram.com/gandakisupplier_rampur" target="_blank">  
+        <i class="fab fa-instagram"></i> Follow us on Instagram  
+      </a>  
+      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">  
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp  
+      </a>  
+    </section>  
+  </div>  
+  <footer>  
+    &copy; 2025 Gandaki Suppliers. All rights reserved. |  
+    <a href="privacy-policy.html" style="color: #fff; text-decoration: underline;">Privacy Policy</a>  
+  </footer>  
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/favicon-gandaki.png" type="image/png" />
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more. Owned by Govinda Devkota." />
-  <meta name="keywords" content="Gandaki Suppliers, Hardware Palpa, Plywood, Sunmica, Kitchen Fittings, Nepal Hardware Shop, Govinda Devkota" />
-  <meta name="author" content="Govinda Devkota" />
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Gandaki Suppliers 💪🏡" />
-  <meta property="og:description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more. Owned by Govinda Devkota." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" />
-  <meta property="og:url" content="https://gandaki-om.github.io/gandaki-suppliers/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gandaki Suppliers 💪🏡" />
-  <meta name="twitter:description" content="Top hardware and home decor store in Palpa, Nepal. Plywood, sunmica, Fevicol, glass, kitchen fittings & more." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" />
-
-  <!-- JSON-LD Structured Data for Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HardwareStore",
-    "name": "Gandaki Suppliers",
-    "image": "https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg",
-    "@id": "https://gandaki-om.github.io/gandaki-suppliers/",
-    "url": "https://gandaki-om.github.io/gandaki-suppliers/",
-    "telephone": "+9779857060910",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rampur 5, Palpa Bhejad",
-      "addressLocality": "Palpa",
-      "addressCountry": "Nepal"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 28.123456,
-      "longitude": 83.456789
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-      ],
-      "opens": "07:00",
-      "closes": "20:00"
-    },
-    "sameAs": [
-      "https://www.facebook.com/gandakisuppliers",
-      "https://www.instagram.com/gandakisupplier_rampur"
-    ]
-  }
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    @keyframes fadeInDown { 0% {opacity: 0; transform: translateY(-20px);} 100% {opacity: 1; transform: translateY(0);} }
-    @keyframes fadeInUp { 0% {opacity: 0; transform: translateY(20px);} 100% {opacity: 1; transform: translateY(0);} }
-    @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
-
-    header {
-      background: linear-gradient(135deg, #004d40, #009688);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeInDown 1s ease forwards;
-    }
-    header img {
-      width: 90px;
-      margin-bottom: 15px;
-      animation: bounce 2s infinite;
-      border-radius: 10px;
-    }
-    header h1 {
-      font-size: 3em;
-      font-weight: 900;
-      margin: 10px 0;
-      letter-spacing: 2px;
-      animation: fadeInUp 1.2s ease forwards;
-    }
-    header p {
-      font-size: 1.3em;
-      margin: 0;
-      font-weight: 600;
-      animation: fadeInUp 1.4s ease forwards;
-    }
-
-    nav {
-      background-color: #00695c;
-      padding: 14px 0;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 22px;
-      font-weight: 700;
-      font-size: 1.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: #ff6f61; }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto 80px;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-
-    .section { margin-bottom: 50px; }
-    .section h2 {
-      color: #00695c;
-      border-bottom: 3px solid #004d40;
-      padding-bottom: 10px;
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    ul, .info-list { list-style: square; padding-left: 25px; font-size: 1.1em; color: #333; }
-
-    .button-link {
-      display: inline-block;
-      margin: 12px 8px;
-      padding: 14px 24px;
-      background-color: #ff6f61;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: background 0.3s;
-    }
-    .button-link:hover { background-color: #d84315; }
-
-    footer {
-      background-color: #004d40;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.95em;
-    }
-
-    .reviews {
-      position: relative;
-      overflow: hidden;
-      min-height: 140px; 
-      background: #e0f2f1;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 50px;
-    }
-    .review {
-      position: absolute;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      padding-left: 40px;
-      font-style: italic;
-    }
-    .review.active { opacity: 1; position: relative; }
-    .review::before {
-      content: "\1F4AC";
-      position: absolute;
-      left: 10px;
-      top: 0;
-      font-size: 24px;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 220px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg" alt="Gandaki Suppliers Logo" />
-    <h1>Gandaki Suppliers 💪🏡</h1>
-    <p>Your trusted store for hardware & home decor materials</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#offers">Offers</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen & home decor fittings. Serving furniture makers, home builders & more with reliable, quality products. 🚚 Home delivery available!</p>
-    </section>
-
-    <section id="products" class="section">
-      <h2>Our Products</h2>
-      <ul>
-        <li>🪕 Plywood & Sunmica</li>
-        <li>🍽️ Kitchen & Home Decor Fittings</li>
-        <li>🧴 Fevicol, Formica & Glass</li>
-        <li>🔨 Hinges, Handles & Locks</li>
-        <li>🏋️ All types of furniture hardware</li>
-      </ul>
-    </section>
-
-    <section id="gallery" class="section">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="door1.webp" alt="Door 1" loading="lazy" />
-        <img src="door2.webp" alt="Door 2" loading="lazy" />
-        <img src="door-stopper1.webp" alt="Door Stopper 1" loading="lazy" />
-        <img src="door-handle1.webp" alt="Door Handle 1" loading="lazy" />
-        <img src="door3.webp" alt="Door 3" loading="lazy" />
-      </div>
-    </section>
-
-    <section id="reviews" class="section reviews">
-      <h2>Customer Reviews</h2>
-      <div class="review">"Excellent quality and timely delivery! Highly recommend Gandaki Suppliers." – Sita P. ⭐⭐⭐⭐⭐</div>
-      <div class="review">"Great prices and helpful staff. The best hardware shop in town." – Ram K. ⭐⭐⭐⭐⭐</div>
-      <div class="review">"Wide variety of products and top-notch service. Very satisfied!" – Anil B. ⭐⭐⭐⭐⭐</div>
-    </section>
-
-    <section id="offers" class="section offers">
-      <h2>🎉 Special Offers</h2>
-      <ul>
-        <li>💸 10% off on kitchen fittings (this week only!)</li>
-        <li>🛍️ Buy 3 handles, get 1 free!</li>
-      </ul>
-    </section>
-
-    <section id="team" class="section team">
-      <h2>👨‍🔧 Meet the Owner</h2>
-      <img src="https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/govinda.jpg" alt="Govinda Devkota" style="width: 160px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin-bottom: 15px;" />
-      <p>Gandaki Suppliers is proudly owned and managed by <strong>Mr. Govinda Devkota</strong>, who has over <strong>20 years of experience</strong> in the hardware and home decor industry. He is well known in Palpa for his honesty, dedication, and excellent customer service.</p>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact & Location</h2>
-      <ul class="info-list">
-        <li>📞 Phone: <strong>9857060910</strong></li>
-        <li>📧 Email: <strong>sbgandakisuppliers@gmail.com</strong></li>
-        <li>📍 Address: <strong>Rampur 5, Palpa Bhejad, Nepal</strong></li>
-        <li>⏰ Business Hours: <strong>7 AM - 8 PM (Everyday)</strong></li>
-        <li>🚚 Free Delivery Around Shop | Delivery All Over Palpa</li>
-      </ul>
-      <a class="button-link map-link" href="https://maps.app.goo.gl/vQFNXiFo361URjE67" target="_blank">
-        <i class="fas fa-map-marker-alt"></i> View on Google Maps
-      </a>
-      <a class="button-link fb-button" href="https://www.facebook.com/gandakisuppliers" target="_blank">
-        <i class="fab fa-facebook"></i> Follow us on Facebook
-      </a>
-      <a class="button-link insta-button" href="https://www.instagram.com/gandakisupplier_rampur" target="_blank">
-        <i class="fab fa-instagram"></i> Follow us on Instagram
-      </a>
-      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-      </a>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Gandaki Suppliers. All rights reserved. |
-    <a href="privacy-policy.html" style="color: #fff; text-decoration: underline;">Privacy Policy</a>
-  </footer>
-
-  <script>
-    const reviews = document.querySelectorAll('.review');
-    let current = 0;
-
-    function showReview(index) {
-      reviews.forEach((rev,i)=>{
-        rev.classList.toggle('active', i===index);
-      });
-    }
-
-    function nextReview() {
-      current = (current+1) % reviews.length;
-      showReview(current);
-    }
-
-    showReview(current);
-    setInterval(nextReview, 4000); // every 4 seconds for better readability
-  </script>
-</body>
+  <script>  
+    const reviews = document.querySelectorAll('.review');  
+    let current = 0;  
+  
+    function showReview(index) {  
+      reviews.forEach((rev, i) => {  
+        rev.classList.toggle('active', i === index);  
+      });  
+    }  
+  
+    function nextReview() {  
+      current = (current + 1) % reviews.length;  
+      showReview(current);  
+    }  
+  
+    // Initially show the first review  
+    showReview(current);  
+  
+    // Change review every 3 seconds  
+    setInterval(nextReview, 3000);  
+  </script>  
+</body>  
 </html>
