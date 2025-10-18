@@ -12,8 +12,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gandaki Suppliers – Best Hardware & Home Decor Store in Rampur, Palpa</title>
-  <meta name="description" content="Visit Gandaki Suppliers in Rampur, Palpa for all types of hardware, plywood, sunmica, Fevicol, glass, and kitchen fittings. Trusted by locals for top quality and af[...]" />
-  <meta name="keywords" content="Gandaki Suppliers, hardware store Rampur Palpa, plywood Palpa, Fevicol Nepal, glass fittings Rampur, kitchen fittings Palpa, home decor Palpa, furniture hardware Nepal[...]" />
+  <meta name="description" content="Visit Gandaki Suppliers in Rampur, Palpa for all types of hardware, plywood, sunmica, Fevicol, glass, and kitchen fittings. Trusted by locals for top quality and affordable prices." />
+  <meta name="keywords" content="Gandaki Suppliers, hardware store Rampur Palpa, plywood Palpa, Fevicol Nepal, glass fittings Rampur, kitchen fittings Palpa, home decor Palpa" />
   <meta name="author" content="Gandaki Suppliers, Rampur Palpa" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
@@ -92,16 +92,16 @@
       overflow-x: hidden;
     }
     @keyframes fadeInDown {
-      0% {opacity: 0; transform: translateY(-20px);}
-      100% {opacity: 1; transform: translateY(0);}
+      0% {opacity: 0; transform: translateY(-20px);} 
+      100% {opacity: 1; transform: translateY(0);} 
     }
     @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
+      0% {opacity: 0; transform: translateY(20px);} 
+      100% {opacity: 1; transform: translateY(0);} 
     }
     @keyframes bounce {
-      0%, 100% {transform: translateY(0);}
-      50% {transform: translateY(-15px);}
+      0%, 100% {transform: translateY(0);} 
+      50% {transform: translateY(-15px);} 
     }
     header {
       background: linear-gradient(135deg, #004d40, #009688);
@@ -254,7 +254,7 @@
   <div class="container">
     <section id="about" class="section">
       <h2>About Us</h2>
-      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen & home decor fittings. Serving furniture makers, home builders & more with reliable, quality products. 🚚 Home del[...]</p>
+      <p>We supply all types of hardware, plywood, sunmica, Fevicol, glass, kitchen & home decor fittings. Serving furniture makers, home builders & more with reliable, quality products. 🚚 Home delivery available across Palpa.</p>
     </section>
 
     <section id="products" class="section">
@@ -318,16 +318,16 @@
         <li>🚚 Free Delivery Around Shop | Delivery All Over Palpa</li>
       </ul>
 
-      <a class="button-link map-link" href="https://maps.app.goo.gl/vQFNXiFo361URjE67" target="_blank">
+      <a class="button-link map-link" href="https://maps.app.goo.gl/vQFNXiFo361URjE67" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps">
         <i class="fas fa-map-marker-alt"></i> View on Google Maps
       </a>
-      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank">
+      <a class="button-link fb-button" href="https://www.facebook.com/share/1ALVbjYkdD/" target="_blank" rel="noopener noreferrer" aria-label="Follow Gandaki Suppliers on Facebook">
         <i class="fab fa-facebook"></i> Follow us on Facebook
       </a>
-      <a class="button-link insta-button" href="https://www.instagram.com/gandakisupplier_rampur" target="_blank">
+      <a class="button-link insta-button" href="https://www.instagram.com/gandakisupplier_rampur" target="_blank" rel="noopener noreferrer" aria-label="Follow Gandaki Suppliers on Instagram">
         <i class="fab fa-instagram"></i> Follow us on Instagram
       </a>
-      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank">
+      <a class="button-link wa-button" href="https://wa.me/9779857060910" target="_blank" rel="noopener noreferrer" aria-label="Chat with Gandaki Suppliers on WhatsApp">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </section>
@@ -355,11 +355,11 @@
     setInterval(nextReview, 3000);
   </script>
 
-  <!-- Register service worker (change path if you store sw.js elsewhere) -->
+  <!-- Register service worker (use a relative path so it works on GitHub Pages) -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/gandaki-suppliers/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then((reg) => console.log('Service Worker registered. Scope:', reg.scope))
           .catch((err) => console.warn('SW registration failed:', err));
       });
