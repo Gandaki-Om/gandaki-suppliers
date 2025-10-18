@@ -1,0 +1,29 @@
+{
+  "name": "Gandaki Suppliers",
+  "short_name": "Gandaki",
+  "description": "Your trusted hardware & home decor store in Rampur, Palpa — plywood, fittings, glass, Fevicol, and more!",
+  "start_url": "/gandaki-suppliers/",
+  "scope": "/gandaki-suppliers/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/gandaki-suppliers/assets/images/favicon-gandaki-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/gandaki-suppliers/assets/images/favicon-gandaki-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/gandaki-suppliers/assets/images/favicon-gandaki-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "lang": "en"
+}
