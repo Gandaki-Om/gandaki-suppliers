@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home Page -->
   <url>
     <loc>https://gandaki-om.github.io/gandaki-suppliers/</loc>
+    <lastmod>2025-10-19T20:54:00+05:45</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gandaki-om.github.io/gandaki-suppliers/" />
   </url>
+
+  <!-- About Page -->
   <url>
-    <loc>https://gandaki-om.github.io/gandaki-suppliers/about</loc>
+    <loc>https://gandaki-om.github.io/gandaki-suppliers/about.html</loc>
+    <lastmod>2025-10-19T20:54:00+05:45</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gandaki-om.github.io/gandaki-suppliers/about.html" />
   </url>
+
+  <!-- Products Page -->
   <url>
-    <loc>https://gandaki-om.github.io/gandaki-suppliers/products</loc>
-    <priority>0.8</priority>
+    <loc>https://gandaki-om.github.io/gandaki-suppliers/products.html</loc>
+    <lastmod>2025-10-19T20:54:00+05:45</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gandaki-om.github.io/gandaki-suppliers/products.html" />
   </url>
+
+  <!-- Contact Page -->
   <url>
-    <loc>https://gandaki-om.github.io/gandaki-suppliers/contact</loc>
+    <loc>https://gandaki-om.github.io/gandaki-suppliers/contact.html</loc>
+    <lastmod>2025-10-19T20:54:00+05:45</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gandaki-om.github.io/gandaki-suppliers/contact.html" />
   </url>
+
 </urlset>
