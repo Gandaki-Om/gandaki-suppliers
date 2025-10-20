@@ -4,8 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
- <meta name="copyright" content="© 2025 Gandaki Suppliers, Rampur, Palpa, Nepal">
- <!-- ===== FAVICONS (ensure these files are in assets/images/favicon/) =====
+  <!-- Basic info -->
+  <meta name="copyright" content="© 2025 Gandaki Suppliers, Rampur, Palpa, Nepal">
+  <meta name="revised" content="2025-10-20" />
+
+  <!-- PWA / App hints -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Gandaki Suppliers" />
+  <meta name="application-name" content="Gandaki Suppliers" />
+
+  <!-- ===== FAVICONS (ensure these files are in assets/images/favicon/) =====
        If you update any icon later, change the ?v=4 value to force browsers to reload. -->
   <link rel="icon" href="https://gandaki-om.github.io/gandaki-suppliers/assets/images/favicon/favicon.ico?v=4" type="image/x-icon" />
   <link rel="shortcut icon" href="https://gandaki-om.github.io/gandaki-suppliers/assets/images/favicon/favicon.ico?v=4" />
@@ -21,6 +30,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
   <link rel="canonical" href="https://gandaki-om.github.io/gandaki-suppliers/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gandaki-om.github.io/gandaki-suppliers/sitemap.xml" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Gandaki Suppliers – Best Hardware & Home Decor Store in Rampur, Palpa" />
@@ -44,20 +54,25 @@
   <meta name="geo.region" content="NP-P4" />
   <meta name="geo.placename" content="Rampur, Palpa" />
   <meta name="geo.position" content="27.6423;83.4656" />
+  <meta name="ICBM" content="27.6423, 83.4656" />
+  <meta name="address" content="Rampur 5, Palpa Bhejad, Nepal" />
 
   <!-- Theme color (used by mobile browsers) -->
   <meta name="theme-color" content="#2563eb" />
 
-  <!-- Performance (fontawesome) -->
+  <!-- Performance: font preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- JSON-LD structured data -->
+  <!-- JSON-LD structured data (improved) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HardwareStore",
+    "@id": "https://gandaki-om.github.io/gandaki-suppliers/#organization",
     "name": "Gandaki Suppliers",
     "description": "Hardware and home decor store in Rampur, Palpa offering plywood, fittings, glass, Fevicol, and more.",
     "image": "https://raw.githubusercontent.com/Gandaki-Om/gandaki-suppliers/main/FB_IMG_1736132657156.jpg",
@@ -76,6 +91,10 @@
       "@type": "GeoCoordinates",
       "latitude": 27.6423,
       "longitude": 83.4656
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Palpa District"
     },
     "sameAs": [
       "https://www.facebook.com/gandakisuppliers",
@@ -247,4 +266,3 @@
   -->
 </body>
 </html>
-
