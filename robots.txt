@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap to help search engines discover all your pages
+Sitemap: https://gandaki-om.github.io/gandaki-suppliers/sitemap.xml
+
+# Notes:
+# - "Allow: /" means your entire site can be indexed.
+# - Make sure sitemap.xml exists in the same root folder.
+# - After uploading, visit this URL to test:
+#   https://gandaki-om.github.io/gandaki-suppliers/robots.txt
+
